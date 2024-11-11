@@ -1,0 +1,79 @@
+<!-- <p>create-post works!</p>
+
+<mat-card class="center-crad">
+    <mat-card-content>
+        <div>
+            <form [formGroup]="postForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Img</mat-label>
+                    <input matInput formControlName="img">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Content</mat-label>
+                    <textarea matInput rows="5" formControlName="content"></textarea>
+                </mat-form-field>
+
+                mat-form-field appearance="fill">
+                    <mat-label>Posted BY</mat-label>
+                    <input matInput formControlName="postedBy">
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" style="float: right;"
+                [disabled]="!postForm.valid">Create New Post</button>
+
+            </form>
+        </div>
+    </mat-card-content>
+</mat-card> -->
+
+<div class="center-card">
+    <div class="card-content">
+      <form [formGroup]="postForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" formControlName="name" class="input-field" type="text">
+        </div>
+  
+        <div class="form-group">
+          <label for="img">Img</label>
+          <input id="img" formControlName="img" class="input-field" type=text>
+        </div>
+  
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea id="content" formControlName="content" class="input-field" rows="5"></textarea>
+        </div>
+  
+        <div class="form-group">
+          <label for="postedBy">Posted By</label>
+          <input id="postedBy" formControlName="postedBy" class="input-field" type="text">
+        </div>
+
+        <div class="tag-container">
+            <label for="tags-input">Tags</label>
+            <div id="tags">
+                <span *ngFor="let tag of tags; let i = index" class="tag">
+                    {{ tag }}
+                    <button type="button" class="remove-tag" (click)="removeTag(i)">×</button>
+                </span>
+            </div>
+            <input 
+                type="text" 
+                id="tags-input" 
+                placeholder="New Tag ..." 
+                (keyup.enter)="addTag($event)" 
+            />
+        </div>
+        
+  
+        <button type="submit" class="submit-button" [disabled]="!postForm.valid" (click)="createPost()">Create New Post</button>
+      </form>
+    </div>
+  </div>
+  

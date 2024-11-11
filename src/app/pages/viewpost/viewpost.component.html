@@ -1,0 +1,144 @@
+<!-- <div *ngif="postData" class="card-container">
+    <mat-card>
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{ postData.name}</mat-card-title>
+                <mat-card-subtitle>Posted by : {{ postData.postedBy }} | Posted On : {{ postData.date | date:'medium'}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="postData.img" height="300px" class="img" alt="Card Image" />
+        <mat-card-content>
+            {{ postData.content }}    
+        </mat-card-content>
+        <br>
+        <mat-chip-set>
+            <mat-chip *ngFor="let tag of postData.tags">{{ tag }}</mat-chip>
+        </mat-chip-set>
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="likePost()"> {{postData.likeCount}}
+                <mat-icon>favorite</mat-icon></button>
+                <button mat-raised-button color="primary" style="margin-left: 5px;">{{postData.viewCount}}
+                    <mat-icon>remove_red_eye</mat-icon></button>                        
+        </mat-card-actions>
+    </mat-card>
+</div> -->
+
+<!-- <mat-card class="comment-card">
+    <mat-card-content>
+        <h4>Publish Your Comment</h4>
+        <div>
+            <form [formGroup]="commentForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Content</mat-label>
+                    <textarea matInput formControlName="content"></textarea>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Posted By</mat-label>
+                    <textarea matInput formControlName="posredBy"></textarea>
+                </mat-form-field>
+
+                <button mat-raised-button 
+                (click)="publishComment()" color="primary" style="float: right;" [disabled]="!commentForm.valid">Publish Comment</button>
+            </form>
+        </div>
+    </mat-card-content>
+</mat-card> -->
+
+<!-- <div style="margin-top: 10px;">
+    <h4>Comments</h4>
+    <mat-card style="margin-top: 10px;" *ngFor="let comment of comments">
+        <mat-card-header>
+            <div mata-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{ comment.postedBy }}</mat-card-title>
+            <mat-card-subtitle> {{ <comment.createAt | date: "medium"}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            {{ comment.content }}
+        </mat-card-content>
+    </mat-card>
+</div> -->
+
+
+<div *ngIf="postData" class="card-container">
+    <div class="card">
+        <!-- Header -->
+        <div class="card-header">
+            <div class="header-avatar"></div>
+            <div class="header-text">
+                <h2 class="card-title">{{ postData.name }}</h2>
+                <p class="card-subtitle">Posted by: {{ postData.postedBy }} | Posted On: {{ postData.date | date: 'medium' }}</p>
+            </div>
+        </div>
+
+        <!-- Card Image -->
+        <img class="card-image" [src]="postData.img" height="300px" alt="Card Image" />
+
+        <!-- Card Content -->
+        <div class="card-content">
+            <p>{{ postData.content }}</p>
+        </div>
+
+        <!-- Tags -->
+        <div class="tags">
+            <span class="tag" *ngFor="let tag of postData.tags">{{ tag }}</span>
+        </div>
+
+        <!-- Actions -->
+        <div class="card-actions">
+            <!-- Κουμπί Like -->
+            <button class="btn primary" (click)="likePost()">
+              {{ postData.likeCount }}
+              <span class="icon">❤️</span> <!-- εναλλακτική εικόνα για favorite -->
+            </button>
+          
+            <!-- Κουμπί View -->
+            <button class="btn primary" style="margin-left: 5px;">
+              {{ postData.viewCount }}
+              <span class="icon">👁️</span> <!-- εναλλακτική εικόνα για remove_red_eye -->
+            </button>
+          </div>
+
+          <div class="comment-card">
+            <div class="comment-card-content">
+                <h4>Publish Your Comment</h4>
+                <form [formGroup]="commentForm" class="comment-form">
+                    <div class="form-field">
+                        <label for="content">Content</label>
+                        <textarea id="content" formControlName="content" rows="4"></textarea>
+                    </div>
+        
+                    <div class="form-field">
+                        <label for="postedBy">Posted By</label>
+                        <input id="postedBy" formControlName="postedBy" />
+                    </div>
+        
+                    <button 
+                        (click)="publishComment()" 
+                        class="publish-button" 
+                        [disabled]="!commentForm.valid">
+                        Publish Comment
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div style="margin-top: 10px;">
+            <h4>Comments</h4>
+            <div class="comment-card" style="margin-top: 10px;" *ngFor="let comment of comments">
+                <div class="comment-header">
+                    <div class="avatar-placeholder"></div>
+                    <div class="comment-details">
+                        <div class="comment-author">{{ comment.postedBy }}</div>
+                        <div class="comment-date">{{ comment.createAt | date: "medium" }}</div>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    {{ comment.content }}
+                </div>
+            </div>
+        </div>
+          
+
+    </div>
+</div>

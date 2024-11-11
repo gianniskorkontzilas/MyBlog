@@ -1,0 +1,115 @@
+/* Στυλ για την κάρτα */
+.center-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  /* Στυλ για τη φόρμα */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+  
+  .input-field:focus {
+    border-color: #1976d2;  /* Χρώμα border όταν το input είναι επιλεγμένο */
+    outline: none;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  /* Στυλ για το κουμπί */
+  .submit-button {
+    background-color: #1976d2;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  .submit-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .submit-button:hover:enabled {
+    background-color: #1565c0;
+  }
+  
+  .tag-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.remove-tag {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#tags-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.tag button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 12px;
+    margin-left: 5px;
+    cursor: pointer;
+  }

@@ -1,0 +1,105 @@
+<!-- <div class="search-form">
+    <mat-form-field appearance="outline" class="search-input">
+        <mat-label>Enter Keyword to search</mat-label>
+        <input matInput [(ngModel)]="name">
+
+        <button mat-button matsuffix color="primary" (click)="searchByName()"> <mat-icon>search</mat-icon></button>
+    </mat-form-field>
+</div> -->
+<!-- 
+<div class="empty" *ngIf="result.length == 0">
+    <mat-icon class="icon">no_sim</mat-icon>
+    <br>
+    <span>Nothing to see here.</span>
+</div> -->
+
+
+<!-- <div class="search-form">
+    <div class="search-input">
+        <label for="search">Enter Keyword to search</label>
+        <input id="search" type="text" [(ngModel)]="name" />
+
+        <button class="search-button" (click)="searchByName()">
+            🔍
+        </button>
+    </div>
+</div>
+
+<div class="empty" *ngIf="result.length === 0">
+    <span class="icon">❌</span>
+    <br>
+    <span>Nothing to see here.</span>
+</div>
+
+<div class="card-container" *ngFor="let item of allPosts">
+    <div class="card">
+      <div class="card-header">
+        <div class="avatar"></div>
+        <div class="card-title">{{ item.name }}</div>
+        <div class="card-subtitle">
+          Posted by: {{ item.postedBy }} | Posted On: {{ item.date | date:'medium' }}
+        </div>
+      </div>
+  
+      <div class="card-body">
+        <div class="card-image">
+          <img [src]="item.img" alt="Post image" />
+        </div>
+        <div class="card-content">
+          {{ item.content.length > 600 ? item.content.substr(0, 600) + '...' : item.content }}
+        </div>
+      </div>
+  
+      <hr>
+  
+      <div class="card-actions">
+        <button class="like-button">{{item.likeCount}} ❤️</button>
+        <button class="view-button">{{item.viewCount}} 👁️</button>
+      </div>
+    </div>
+  </div> -->
+  
+  <div class="search-form">
+    <div class="search-input">
+      <label for="search">Enter Keyword to search</label>
+      <input id="search" type="text" [(ngModel)]="name" />
+      <button class="search-button" (click)="searchByName()">🔍</button>
+    </div>
+  </div>
+  
+  <!-- Μήνυμα όταν δεν υπάρχουν αποτελέσματα -->
+  <div class="empty" *ngIf="result.length === 0">
+    <span class="icon">❌</span>
+    <br />
+    <span>Nothing to see here.</span>
+  </div>
+  
+  <!-- Εμφάνιση των αποτελεσμάτων -->
+  <div class="card-container" *ngFor="let item of result">
+    <div class="card">
+      <div class="card-header">
+        <div class="avatar"></div>
+        <div class="card-title">{{ item.name }}</div>
+        <div class="card-subtitle">
+          Posted by: {{ item.postedBy }} | Posted On: {{ item.date | date: 'medium' }}
+        </div>
+      </div>
+  
+      <div class="card-body">
+        <div class="card-image">
+          <img [src]="item.img" alt="Post image" />
+        </div>
+        <div class="card-content">
+          {{ item.content.length > 600 ? item.content.substr(0, 600) + '...' : item.content }}
+        </div>
+      </div>
+  
+      <hr />
+  
+      <div class="card-actions">
+        <button class="like-button">{{ item.likeCount }} ❤️</button>
+        <button class="view-button">{{ item.viewCount }} 👁️</button>
+      </div>
+    </div>
+  </div>
+  

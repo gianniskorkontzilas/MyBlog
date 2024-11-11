@@ -1,0 +1,68 @@
+<!-- <div class="card-container" *ngFor="let item af allPosts">
+    <mat-card>
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ item.name }}</mat-card-title>
+        <mat-card-subtitle>
+        Posted by : {{ item.postedBy }} | Posted On : {{ item.date | date:'medium'}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-grid-list cols="5">
+        <mat-grid-title [colspan]="2" [rowspan]="1">
+            <img mat-card-image [src]="item.img" class="post-img" alt="Card Image"/>
+        </mat-grid-title>
+        <mat-grid-title [colspan]="3" [rowspan]="1">
+            <mat-card-content>
+                {{ item.content.length > 600 ? item.content.substr(0, 600) + '...' : item.count}}
+            </mat-card-content>
+        </mat-grid-title>
+    </mat-grid-list>
+
+    <hr>
+    <mat-card-actions>
+        <button mat-raised-button color="primary">{{item.likeCount}} <mat-icon>favorite</mat-icon></button>
+        <button mat-raised-button color="primary" style="margin-left:5 px;">{{item.viewCount}}<mat-icon>remove_red_eye</mat-icon></button>
+
+    </mat-card-actions>
+    </mat-card>
+</div> -->
+
+<div class="card-container" *ngFor="let item of allPosts">
+    <div class="card">
+        <!-- Header -->
+        <div class="card-header">
+            <div class="header-avatar"></div>
+            <div class="header-text">
+                <h2 class="card-title">{{ item.name }}</h2>
+                <p class="card-subtitle">Posted by: {{ item.postedBy }} | Posted On: {{ item.date | date:'medium' }}</p>
+            </div>
+        </div>
+
+        <!-- Grid-like Layout for Image and Content -->
+        <div class="card-body">
+            <div class="card-image">
+                <img [src]="item.img" alt="Card Image" class="post-img" />
+            </div>
+            <div class="card-content">
+                <p>{{ item.content.length > 600 ? item.content.substr(0, 600) + '...' : item.content }}</p>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <hr />
+
+        <!-- Actions -->
+        <div class="card-actions">
+            <button class="like-button">{{ item.likeCount }} ❤️</button>
+            <button class="view-button">{{ item.viewCount }} 👁️</button>
+
+            <button 
+    style="margin-left: 5px; background-color: blue; color: white; border: none; padding: 10px; cursor: pointer;" 
+    [routerLink]="'/view-post/' + item.id">
+    View Post
+</button>
+
+
+        </div>
+    </div>
+</div>
